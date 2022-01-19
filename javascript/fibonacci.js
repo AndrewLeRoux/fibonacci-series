@@ -1,5 +1,11 @@
 function fibonacci(num) {
-  // type your code here
+  let arr = [0,1]
+  if (num > 1){
+    for (let i = 2; i <= num; i++){
+      arr.push(arr[i-1] + arr[i-2])
+    }
+  }
+  return arr[num]
 }
 
 if (require.main === module) {
@@ -16,6 +22,7 @@ if (require.main === module) {
 
   console.log("Expecting: 55");
   console.log("=>", fibonacci(10));
+  
 }
 
 module.exports = fibonacci;
